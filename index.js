@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import authRoute from './routes/auth';
+import postRoute from './routes/posts';
 const port = 3006;
 const app = express()
 
@@ -14,5 +15,6 @@ app.use(
 );
 
 app.use('/api/user', authRoute);
+app.use('/api/posts', postRoute);
 
 app.listen(port, () => {console.log(`Server running on port ${port}`)});
